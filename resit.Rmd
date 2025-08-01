@@ -10,8 +10,7 @@ library(tidyverse)
 library(tidymodels)
 ```
 
-
-## Data Load
+## Exercise 1
 
 ```{r load-data, eval=FALSE}
 # change eval=FALSE to eval=TRUE
@@ -24,7 +23,7 @@ RealEstate <- ___
 ```
 
 
-## Exercise 1 and 2
+## Exercise 2 and 3
 
 ```{r add-variable , eval=FALSE}
 # change eval=FALSE to eval=TRUE
@@ -44,20 +43,6 @@ RealEstate%>%
   )
 ``` 
 
-## Exercise 3 
-
-```{r ex-3 , eval=FALSE}
-# change eval=FALSE to eval=TRUE
-
-RealEstate_subset <- RealEstate_new %>%
-  group_by(____, _____) %>%
-  ______(______) %>% 
-  _______(_____)
-
-```    
-
-
-*Add your narrative here.*
 
 ---
 
@@ -95,7 +80,6 @@ boot_df <- RealEstate %>%
 boot_df
 
 ```
-
 
 ---
 
@@ -135,7 +119,6 @@ tidy(log_real_est_fit)
 
 ```
 
-
 ```{r}
 # Plot the residual vs fitted values
 
@@ -169,4 +152,11 @@ tidy(log_real_est_fit)
 
 ## Exercise 10
 
+(a) Ethical issues with how the data was obtained/processed:
+
 *Add your narrative here.*
+
+(b) Ethical issues with how the data visualisation has been presented:
+
+*Add your narrative here.*
+
