@@ -1,48 +1,51 @@
 ---
-title: "Property prices in Venice, Florida"
+title: "Air pollution in Ticino, Switzerland"
 author: "YOUR NAME (UUN: S0000000, GitHub: USERNAME)"
 date: "`r paste0('Last Compiled: ',format(Sys.time(), '%d %B, %Y'))`"
 output: html_document
 ---
 
 ```{r load-packages, message=FALSE, warning=FALSE}
+# Necessary packages that you need to add
 library(tidyverse)
 library(tidymodels)
 ```
+
 
 ## Exercise 1
 
 ```{r load-data, eval=FALSE}
 # change eval=FALSE to eval=TRUE
 
-
 # Add your code to load the data here
 
-RealEstate <- ___
 
 ```
 
 
-## Exercise 2 and 3
+## Exercise 2 
 
-```{r add-variable , eval=FALSE}
+```{r missing-variable , eval=FALSE}
 # change eval=FALSE to eval=TRUE
 
-RealEstate <- RealEstate %>%
-  ___(Less_than_300k = case_when(
-    ___,
-    ___
-    ),
-    Less_than_300k = fct_relevel(Less_than_300k, ___, ___)
-    )
-  
-RealEstate%>%
-  ___(___) %>%
-  ___(
-    ___,
-  )
+# Add your code to identify and list the missing variables
+
+# Store your new data below
+
+
 ``` 
 
+
+## Exercise 3
+
+```{r factor-variable , eval=FALSE}
+# change eval=FALSE to eval=TRUE
+
+# Add your code to create `High_PM10` and `High_PM25`
+
+Ticino_2020_cleaned <- ___
+
+``` 
 
 ---
 
@@ -50,12 +53,21 @@ RealEstate%>%
 
 ```{r dataviz, eval=FALSE}
 # change eval=FALSE to eval=TRUE
+
 ggplot(____) +
   ____(____)
 
 ```
 
 ## Exercise 5
+
+```{r boxplots, eval=FALSE}
+# change eval=FALSE to eval=TRUE
+
+ggplot(____) +
+  ____(____)
+
+```
 
 *Add your narrative here.*
 
@@ -66,7 +78,7 @@ ggplot(____) +
 ```{r bootstrap, eval=FALSE}
 # change eval=FALSE to eval=TRUE
 
-boot_df <- RealEstate %>%
+boot_AQ_pm10 <- Ticino_2020_cleaned %>%
   # specify the variable of interest
   ___(___) %>% 
   # generate 10000 bootstrap samples
@@ -77,9 +89,11 @@ boot_df <- RealEstate %>%
     summarize(lower = ___,
             upper = ___)
 
-boot_df
+boot_AQ_pm10
 
 ```
+
+*Add your narrative here.*
 
 ---
 
@@ -90,13 +104,11 @@ boot_df
 ```{r linear-reg, eval=FALSE}
 # change eval=FALSE to eval=TRUE
 
-real_est_fit <- ___
+AQ_pm10_linear_fit <- ___
 
-tidy(log_real_est_fit)
+tidy(AQ_pm10_linear_fit)
 
 ```
-
-#### Narrative
 
 *Add your narrative here.*
 
@@ -105,7 +117,7 @@ tidy(log_real_est_fit)
 
 #### Code
 
-```{r linear-reg_simple, eval=FALSE}
+```{r linear-reg_new, eval=FALSE}
 # change eval=FALSE to eval=TRUE
 
 # New model fit
@@ -124,7 +136,6 @@ tidy(log_real_est_fit)
 
 ```
 
-#### Narrative
 
 *Add your narrative here.*
 
@@ -136,15 +147,13 @@ tidy(log_real_est_fit)
 # change eval=FALSE to eval=TRUE
 
 
-log_real_est_fit <- ___
+log_High_PM10_fit <- ___
 
 
-tidy(log_real_est_fit)
+tidy(log_High_PM10_fit)
 
 ```
 
-
-#### Narrative
 
 *Add your narrative here.*
 
@@ -152,11 +161,16 @@ tidy(log_real_est_fit)
 
 ## Exercise 10
 
-(a) Ethical issues with how the data was obtained/processed:
+#### Code
 
-*Add your narrative here.*
+```{r log-reg-new, eval=FALSE}
+# change eval=FALSE to eval=TRUE
 
-(b) Ethical issues with how the data visualisation has been presented:
+log_High_PM25_fit <- ___
+
+tidy(log_High_PM25_fit)
+
+```
 
 *Add your narrative here.*
 
